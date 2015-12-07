@@ -15,7 +15,7 @@ RUN apt-get install -y wget ca-certificates
 
 # Install Elixir
 
-## Set up sources.list to use nearest mirror, adds Erlang Solutions APT repository.
+## Sets up sources.list to use nearest Ubuntu mirror, adds Erlang Solutions APT repository.
 ## cf https://www.erlang-solutions.com/resources/download.html
 RUN sed -i 's/\/archive.ubuntu.com/\/mirror.optus.net/' /etc/apt/sources.list &&\
     echo deb http://packages.erlang-solutions.com/ubuntu `awk -F= '/DISTRIB_CODENAME/ {print $2}' /etc/lsb-release` contrib >> /etc/apt/sources.list
